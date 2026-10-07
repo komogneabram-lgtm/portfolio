@@ -1,8 +1,8 @@
 ---
-title: "Intitulé du projet"
+title: "LE GRAND PORTEFOLIO DE ABRAM"
 date: 2026-10-07
-cadre: "Atelier de professionnalisation"
-resume: "Une phrase : ce que vous avez fait, et pour qui."
+cadre: "Atelier de professionnalisation BTS SIO"
+resume: "CE PORTEFOLIO VA VOUS EN METTRE PLEIN LA VU!"
 competences: [c2]
 ---
 
