@@ -1,30 +1,71 @@
+
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
+<html lang="{{ site.lang | default: 'fr' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.resume | default: site.description }}">
+
   <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+  <meta name="theme-color" content="#080808">
 </head>
+
 <body>
-  <header>
-    <p class="site"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
-    <nav aria-label="Menu principal">
-      <ul>
-        <li><a href="{{ '/' | relative_url }}#projets">Projets</a></li>
-        <li><a href="{{ '/' | relative_url }}#competences">Compétences</a></li>
-        <li><a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a></li>
-      </ul>
+  <div class="page-noise" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Accueil">
+      <span class="brand-mark">A<span>K</span></span>
+      <span class="brand-name">{{ site.title }}</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Menu principal">
+      <a href="{{ '/' | relative_url }}#projets">Projets <span>01</span></a>
+      <a href="{{ '/' | relative_url }}#competences">Compétences <span>02</span></a>
+      <a href="{{ '/mentions-legales/' | relative_url }}">Infos <span>03</span></a>
     </nav>
+
+    <div class="header-status">
+      <span class="status-dot"></span>
+      <span>PORTFOLIO EN LIGNE</span>
+    </div>
   </header>
 
-  <main>
-{{ content }}
+  <div class="top-line" aria-hidden="true">
+    <span>CRÉATIVITÉ · TECH · AMBITION</span>
+    <span>EST. 2026</span>
+  </div>
+
+  <main id="contenu">
+    {{ content }}
   </main>
 
-  <footer>
-    <p>{% if site.email != "" %}<a href="mailto:{{ site.email }}">{{ site.email }}</a> · {% endif %}{% if site.linkedin != "" %}<a href="{{ site.linkedin }}">LinkedIn</a> · {% endif %}contenu sous licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a> · <a href="{{ '/mentions-legales/' | relative_url }}">mentions légales</a></p>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <p class="footer-label">FIN DU SCROLL. PAS DE L'AMBITION.</p>
+      <a class="back-top" href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+        RETOUR EN HAUT ↑
+      </a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        {% if site.email != "" %}
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        {% endif %}
+        {% if site.linkedin != "" %}
+          · <a href="{{ site.linkedin }}">LinkedIn</a>
+        {% endif %}
+      </p>
+
+      <p>
+        © {{ site.time | date: "%Y" }} ·
+        <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a> ·
+        <a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a>
+      </p>
+    </div>
   </footer>
 </body>
 </html>
