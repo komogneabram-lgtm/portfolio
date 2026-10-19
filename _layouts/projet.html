@@ -1,15 +1,49 @@
+
 ---
 layout: default
 ---
-<article>
-  <h1>{{ page.title }}</h1>
-  <p class="sous-titre">{{ page.date | date: "%m/%Y" }} · {{ page.cadre }}</p>
+<article class="project-page">
 
-  <p class="comp-liste">Compétences :
-  {% for c in page.competences %}{% assign comp = site.data.competences | where: "code", c | first %}<span class="comp">{{ comp.libelle }}</span>{% endfor %}
-  </p>
+  <div class="project-back">
+    <a href="{{ '/' | relative_url }}#projets">← RETOUR AUX PROJETS</a>
+    <span>PROJECT / {{ page.date | date: "%Y" }}</span>
+  </div>
 
-  {{ content }}
+  <header class="project-heading">
+    <p class="eyebrow">PORTFOLIO — SÉLECTION DE PROJETS</p>
+    <h1>{{ page.title }}</h1>
+    <p class="project-subtitle">
+      {{ page.date | date: "%m/%Y" }} 
+      <span> / </span>
+      {{ page.cadre }}
+    </p>
+  </header>
 
-  <p><a href="{{ '/' | relative_url }}#projets">Retour aux projets</a></p>
+  <div class="project-divider">
+    <span>01</span>
+    <span>APERÇU DU PROJET</span>
+    <span>— — —</span>
+  </div>
+
+  <section class="project-skills">
+    <p class="eyebrow">COMPÉTENCES MOBILISÉES</p>
+    <div class="comp-liste">
+      {% for c in page.competences %}
+        {% assign comp = site.data.competences | where: "code", c | first %}
+        {% if comp %}
+          <span class="comp">{{ comp.libelle }}</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="project-content">
+    {{ content }}
+  </div>
+
+  <div class="project-end">
+    <span>END OF PROJECT</span>
+    <a href="{{ '/' | relative_url }}#projets">DÉCOUVRIR LES AUTRES PROJETS ↗</a>
+  </div>
+
 </article>
