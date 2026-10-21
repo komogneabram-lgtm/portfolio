@@ -3,9 +3,9 @@ layout: default
 ---
 
 <section class="hero">
-  <p class="hero-overline">PORTFOLIO PERSONNEL · EST. 2026</p>
+  <p class="hero-overline">WELCOME TO MY WORLD · EST. 2026</p>
 
-  <h1>{{ site.title }}</h1>
+  <h1>ABRAM.</h1>
 
   <div class="hero-divider">
     <span></span>
@@ -13,67 +13,39 @@ layout: default
     <span></span>
   </div>
 
-  <p class="sous-titre">{{ site.description }}</p>
+  <h2>Think different. Build bigger.</h2>
+
+  <p class="sous-titre">
+    Curieux par nature. Créatif dans l'esprit.
+    Toujours en quête de nouvelles idées.
+  </p>
 
   <a class="hero-link" href="#projets">
-    EXPLORER MES PROJETS <span>↓</span>
+    EXPLORER MON UNIVERS <span>↓</span>
   </a>
-</section>
-
-<section class="profile-section">
-  <p class="eyebrow">01 — À PROPOS</p>
-  <h2>Profil</h2>
-  <p>Je souhaite faire un master ou une licence et je suis en recherche d'alternance.</p>
 </section>
 
 {% assign projets = site.projets | sort: "date" | reverse %}
 
 <section class="projects-section" id="projets">
-  <p class="eyebrow">02 — RÉALISATIONS</p>
-  <h2>Projets ({{ projets.size }})</h2>
+  <p class="eyebrow">01 — SELECTED WORK</p>
+  <h2>Réalisations</h2>
 
   <div class="projects-grid">
     {% for p in projets %}
       <article class="carte">
-        <p class="project-number">PROJET {{ forloop.index }}</p>
+        <p class="project-number">PROJECT {{ forloop.index }}</p>
         <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
         <p>{{ p.resume }}</p>
-        <p class="meta">{{ p.date | date: "%m/%Y" }} · {{ p.cadre }}</p>
+        <p class="meta">{{ p.date | date: "%m/%Y" }}</p>
         <a class="project-arrow" href="{{ p.url | relative_url }}">DÉCOUVRIR ↗</a>
       </article>
     {% endfor %}
   </div>
 </section>
 
-<section class="skills-section" id="competences">
-  <p class="eyebrow">03 — SAVOIR-FAIRE</p>
-  <h2>Compétences du bloc 1</h2>
-  <p>Chaque croix renvoie au projet qui la prouve. Le tableau se remplit automatiquement à chaque projet ajouté.</p>
-
-  <div class="defile">
-    <table>
-      <thead>
-        <tr>
-          <th scope="col">Compétence</th>
-          {% for p in projets %}
-            <th scope="col"><a href="{{ p.url | relative_url }}">P{{ forloop.rindex }}</a></th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for c in site.data.competences %}
-          <tr>
-            <th scope="row">{{ c.libelle }}</th>
-            {% for p in projets %}
-              <td class="case">
-                {% if p.competences contains c.code %}
-                  <a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : {{ p.title }}">✦</a>
-                {% endif %}
-              </td>
-            {% endfor %}
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+<section class="profile-section">
+  <p class="eyebrow">02 — THE MINDSET</p>
+  <h2>Always creating.</h2>
+  <p>Des idées, des expériences et l'envie constante de construire quelque chose de nouveau.</p>
 </section>
