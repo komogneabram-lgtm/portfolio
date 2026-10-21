@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'fr' }}">
 <head>
@@ -6,35 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+
   <meta name="description" content="{{ page.resume | default: site.description }}">
+  <meta name="theme-color" content="#080808">
 
   <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
-  <meta name="theme-color" content="#080808">
 </head>
 
-<body>
+<body id="top">
+
   <div class="page-noise" aria-hidden="true"></div>
 
   <header class="site-header">
+
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Accueil">
       <span class="brand-mark">A<span>K</span></span>
       <span class="brand-name">{{ site.title }}</span>
     </a>
 
-    <nav class="main-nav" aria-label="Menu principal">
-      <a href="{{ '/' | relative_url }}#projets">Projets <span>01</span></a>
-      <a href="{{ '/' | relative_url }}#competences">Compétences <span>02</span></a>
-      <a href="{{ '/mentions-legales/' | relative_url }}">Infos <span>03</span></a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="{{ '/' | relative_url }}">Accueil</a>
+      <a href="{{ '/' | relative_url }}#parcours">Parcours</a>
+      <a href="{{ '/' | relative_url }}#projets">Réalisations</a>
+      <a href="{{ '/' | relative_url }}#competences">Compétences</a>
+      <a href="{{ '/' | relative_url }}#creativite">Créativité</a>
+      <a href="{{ '/' | relative_url }}#radar">Radar</a>
     </nav>
 
     <div class="header-status">
       <span class="status-dot"></span>
       <span>PORTFOLIO EN LIGNE</span>
     </div>
+
   </header>
 
   <div class="top-line" aria-hidden="true">
-    <span>CRÉATIVITÉ · TECH · AMBITION</span>
+    <span>CREATIVITY · TECH · AMBITION</span>
     <span>EST. 2026</span>
   </div>
 
@@ -43,18 +49,22 @@
   </main>
 
   <footer class="site-footer">
+
     <div class="footer-top">
-      <p class="footer-label">FIN DU SCROLL. PAS DE L'AMBITION.</p>
-      <a class="back-top" href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+      <p class="footer-label">ENDLESS CURIOSITY. LIMITLESS IDEAS.</p>
+
+      <a class="back-top" href="#top">
         RETOUR EN HAUT ↑
       </a>
     </div>
 
     <div class="footer-bottom">
+
       <p>
         {% if site.email != "" %}
           <a href="mailto:{{ site.email }}">{{ site.email }}</a>
         {% endif %}
+
         {% if site.linkedin != "" %}
           · <a href="{{ site.linkedin }}">LinkedIn</a>
         {% endif %}
@@ -65,7 +75,11 @@
         <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a> ·
         <a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a>
       </p>
+
     </div>
+
   </footer>
+
 </body>
 </html>
+
