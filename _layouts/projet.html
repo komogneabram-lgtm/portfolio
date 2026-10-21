@@ -1,7 +1,7 @@
-
 ---
 layout: default
 ---
+
 <article class="project-page">
 
   <div class="project-back">
@@ -13,7 +13,7 @@ layout: default
     <p class="eyebrow">PORTFOLIO — SÉLECTION DE PROJETS</p>
     <h1>{{ page.title }}</h1>
     <p class="project-subtitle">
-      {{ page.date | date: "%m/%Y" }} 
+      {{ page.date | date: "%m/%Y" }}
       <span> / </span>
       {{ page.cadre }}
     </p>
@@ -27,6 +27,7 @@ layout: default
 
   <section class="project-skills">
     <p class="eyebrow">COMPÉTENCES MOBILISÉES</p>
+
     <div class="comp-liste">
       {% for c in page.competences %}
         {% assign comp = site.data.competences | where: "code", c | first %}
@@ -43,7 +44,9 @@ layout: default
 
   <div class="project-end">
     <span>END OF PROJECT</span>
-    <a href="{{ '/' | relative_url }}#projets">DÉCOUVRIR LES AUTRES PROJETS ↗</a>
+    <a href="{{ '/' | relative_url }}#projets">
+      DÉCOUVRIR LES AUTRES PROJETS ↗
+    </a>
   </div>
 
 </article>
