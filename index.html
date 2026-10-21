@@ -4,7 +4,6 @@ layout: default
 
 <section class="hero">
   <p class="hero-overline">WELCOME TO MY WORLD · EST. 2026</p>
-
   <h1>ABRAM.</h1>
 
   <div class="hero-divider">
@@ -25,10 +24,19 @@ layout: default
   </a>
 </section>
 
+<section class="profile-section" id="parcours">
+  <p class="eyebrow">01 — THE JOURNEY</p>
+  <h2>Parcours</h2>
+  <p>
+    Un parcours guidé par la curiosité, l'envie d'apprendre
+    et le plaisir de relever de nouveaux défis.
+  </p>
+</section>
+
 {% assign projets = site.projets | sort: "date" | reverse %}
 
 <section class="projects-section" id="projets">
-  <p class="eyebrow">01 — SELECTED WORK</p>
+  <p class="eyebrow">02 — SELECTED WORK</p>
   <h2>Réalisations</h2>
 
   <div class="projects-grid">
@@ -44,8 +52,53 @@ layout: default
   </div>
 </section>
 
-<section class="profile-section">
-  <p class="eyebrow">02 — THE MINDSET</p>
-  <h2>Always creating.</h2>
-  <p>Des idées, des expériences et l'envie constante de construire quelque chose de nouveau.</p>
+<section class="skills-section" id="competences">
+  <p class="eyebrow">03 — KNOW-HOW</p>
+  <h2>Compétences</h2>
+  <p>Des connaissances que je développe et mets en pratique à travers mes projets.</p>
+
+  <div class="defile">
+    <table>
+      <thead>
+        <tr>
+          <th>Compétence</th>
+          {% for p in projets %}
+            <th><a href="{{ p.url | relative_url }}">P{{ forloop.rindex }}</a></th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for c in site.data.competences %}
+          <tr>
+            <th>{{ c.libelle }}</th>
+            {% for p in projets %}
+              <td class="case">
+                {% if p.competences contains c.code %}
+                  <a href="{{ p.url | relative_url }}">✦</a>
+                {% endif %}
+              </td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="profile-section" id="creativite">
+  <p class="eyebrow">04 — CREATIVE LAB</p>
+  <h2>Créativité</h2>
+  <p>
+    Un espace pour expérimenter, imaginer et donner vie
+    à des idées qui sortent de l'ordinaire.
+  </p>
+</section>
+
+<section class="profile-section" id="radar">
+  <p class="eyebrow">05 — WHAT'S NEXT</p>
+  <h2>Radar</h2>
+  <p>
+    Technologies, intelligence artificielle, cybersécurité
+    et innovations : les sujets que je garde à l'œil.
+  </p>
 </section>
